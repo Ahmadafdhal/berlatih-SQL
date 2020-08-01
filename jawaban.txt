@@ -1,0 +1,20 @@
+1. CREATE DATABASE myshop;
+2. a. users
+CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), password VARCHAR(255));
+b. items
+CREATE TABLE items(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), price INT, stock INT, category_id INT);
+c. categories
+CREATE TABLE categories(id AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));
+3. a. users
+INSERT INTO users(name, email, password) VALUES('John Doe', 'john@doe.com','john123'),('Jane Doe', 'jane@doe.com','jenita123');
+b. categories 
+INSERT INTO categories(name) VALUES('gadget'),('cloth'),('men'),('women'),('branded');
+c. INSERT INTO items(name, description, price, stock, category_id) VALUES('Sumsang b50', 'hape keren dari sumsang', 4000000, 100, 1), ('Uniklooh', 'baju keren dari brand ternama', 500000, 50, 2), ('IMHO WATCH', 'jam tangan anak yang jujur banget', 2000000, 10, 1);
+4. a. mengambil data users kecuali password
+SELECT * FROM users(name, email);
+b. - mengambil items yang memiliki harga diatas 1 juta
+SELECT * FROM items WHERE price>1000000;
+- mengambil data items yang memiliki nama serupa
+SELECT * FROM items WHERE name LIKE 'watch';
+c. MASIH KOSONG
+5. UPDATE items SET price=2500000;
